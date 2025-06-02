@@ -77,3 +77,25 @@ void BasicRenderer::Clear(uint32_t color, bool resetCursor)
         cursor_position = {0, 0};
     }
 }
+
+void BasicRenderer::Log(const char* str)
+{
+    unsigned int original_color = color;
+    color = Colors.orange;
+    Print("[LOG  ] ");
+    color = Colors.white;
+    Print(str);
+    Print("\n");
+    color = original_color;
+}
+
+void BasicRenderer::Info(const char* str)
+{
+    unsigned int original_color = color;
+    color = Colors.cyan;
+    Print("[INFO ] ");
+    color = Colors.white;
+    Print(str);
+    Print("\n");
+    color = original_color;
+}

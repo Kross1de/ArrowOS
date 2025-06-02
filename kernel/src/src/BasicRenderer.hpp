@@ -48,8 +48,9 @@ public:
 
     void Print(const char* str);
     void PutChar(char chr, unsigned int xOff, unsigned int yOff);
-
     void Clear(uint32_t color, bool resetCursor);
+    void Log(const char* str);
+    void Info(const char* str);
 };
 
 static BasicRenderer *GlobalRenderer;

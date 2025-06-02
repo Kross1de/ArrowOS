@@ -1,0 +1,26 @@
+#include "gdt.h"
+
+extern "C" void load_gdt(GDTdesc* gdt_desc);
+
+GDT gdt = {
+        //Null descriptor
+        {0x0000, 0x0000, 0x00, 0x00, 0x00, 0x00},
+        //Kernel code segment
+        {0xffff, 0x0000, 0x00, 0x9a, 0xcf, 0x00},
+        //Kernel data segment
+        {0xffff, 0x0000, 0x00, 0x92, 0xcf, 0x00},
+        //User code segment
+        {0xffff, 0x0000, 0x00, 0xfa, 0xcf, 0x00},
+        //User data segment
+        {0xffff, 0x0000, 0x00, 0xf2, 0xcf, 0x00},
+};
+
+GDTdesc gdt_desc = {
+        sizeof(GDT) - 1,
+        (uint64_t)&gdt
+};
+
+void initialize_gdt()
+{
+        load_gdt(&gdt_desc);
+}
