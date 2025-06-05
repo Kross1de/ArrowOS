@@ -81,8 +81,8 @@ void BasicRenderer::Clear(uint32_t color, bool resetCursor)
 void BasicRenderer::Log(const char* str)
 {
     unsigned int original_color = color;
-    color = Colors.orange;
-    Print("[LOG  ] ");
+    color = Colors.blue;
+    Print("[   LOGS   ] ");
     color = Colors.white;
     Print(str);
     Print("\n");
@@ -92,8 +92,8 @@ void BasicRenderer::Log(const char* str)
 void BasicRenderer::Info(const char* str)
 {
     unsigned int original_color = color;
-    color = Colors.cyan;
-    Print("[INFO ] ");
+    color = Colors.green;
+    Print("[   INFO   ] ");
     color = Colors.white;
     Print(str);
     Print("\n");

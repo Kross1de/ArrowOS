@@ -10,10 +10,10 @@ void kernel(struct Framebuffer framebuffer, struct PSF1_FONT* psf1_font)
     GlobalRenderer = &r;
 
     GlobalRenderer->Clear(Colors.dgray, true);
-    GlobalRenderer->Print("Hello User!\n");
     initialize_gdt();
     GlobalRenderer->Log("GDT initialized");
-    GlobalRenderer->Info("ALKSDJASKDHASKJDHASDJIK");
+    GlobalRenderer->Info("Kernel finally started!");
+    GlobalRenderer->Print("Hello user!\n");
 
     return;
 }
