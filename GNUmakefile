@@ -24,6 +24,15 @@ run: $(IMAGE_NAME).iso
 		-boot d \
 		$(QEMUFLAGS)
 
+.PHONY: run-gdb
+run-gdb: $(IMAGE_NAME).iso
+	qemu-system-x86_64 \
+		-M q35 \
+		-cdrom $(IMAGE_NAME).iso \
+		-boot d \
+		-s -S \
+		$(QEMUFLAGS)
+
 .PHONY: run-uefi
 run-uefi: ovmf/ovmf-code-x86_64.fd ovmf/ovmf-vars-x86_64.fd $(IMAGE_NAME).iso
 	qemu-system-x86_64 \
