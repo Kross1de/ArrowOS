@@ -51,6 +51,7 @@ public:
     void Clear(uint32_t color, bool resetCursor);
     void Log(const char* str);
     void Info(const char* str);
+  void Error(const char* str);
 };
 
 static BasicRenderer *GlobalRenderer;

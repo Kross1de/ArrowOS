@@ -1,0 +1,3 @@
+ovmf/
+*.iso
+kernel/src/cc-runtime.c

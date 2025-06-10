@@ -99,3 +99,14 @@ void BasicRenderer::Info(const char* str)
     Print("\n");
     color = original_color;
 }
+
+void BasicRenderer::Error(const char* str)
+{
+  unsigned int original_color = color;
+  color = Colors.red;
+  Print("[   ERROR   ] ");
+  color = Colors.white;
+  Print(str);
+  Print("\n");
+  color = original_color;
+}
