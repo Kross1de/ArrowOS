@@ -4,7 +4,7 @@ void uint64_to_string(uint64_t value, char* buffer, int buffer_size)
 {
   if(buffer_size <= 1)
     {
-      if(buffer_size>0) buffer[0] = '\0';\
+      if(buffer_size>0) buffer[0] = '\0';
       return;
     }
 
